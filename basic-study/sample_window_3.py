@@ -1,5 +1,5 @@
 '''
-应用图标
+简单集合
 '''
 import sys
 
@@ -82,6 +82,7 @@ class AppMainWindow(QMainWindow):
 		fileMenu.addAction(pActionExit)
 
 	def initToolBar(self):
+		# 工具栏
 		pActionExit = QAction(QIcon('F:\pythonproject\my-qt5-study\Resource\icon.PNG'), '&Exit', self)
 		pActionExit.setShortcut('Ctrl+Q')
 		pActionExit.setStatusTip('Exit!')

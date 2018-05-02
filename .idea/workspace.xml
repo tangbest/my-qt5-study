@@ -57,8 +57,8 @@
       <file leaf-file-name="sample_window_3.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/basic-study/sample_window_3.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="91" column="0" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
+            <state relative-caret-position="234">
+              <caret line="84" column="13" selection-start-line="84" selection-start-column="13" selection-end-line="84" selection-end-column="13" />
               <folding>
                 <element signature="e#13#23#0" expanded="true" />
               </folding>
@@ -389,7 +389,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="0" width="1377" height="775" extended-state="1" />
+    <frame x="-8" y="0" width="1377" height="775" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16164584" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -520,8 +520,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/basic-study/sample_window_3.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="91" column="0" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
+        <state relative-caret-position="234">
+          <caret line="84" column="13" selection-start-line="84" selection-start-column="13" selection-end-line="84" selection-end-column="13" />
           <folding>
             <element signature="e#13#23#0" expanded="true" />
           </folding>
