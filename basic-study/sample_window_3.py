@@ -6,14 +6,15 @@ import sys
 from PyQt5.QtCore import QCoreApplication
 from PyQt5.QtGui import QFont
 from PyQt5.QtGui import QIcon
+from PyQt5.QtWidgets import QAction, qApp
 from PyQt5.QtWidgets import QApplication
 from PyQt5.QtWidgets import QDesktopWidget
+from PyQt5.QtWidgets import QMainWindow
 from PyQt5.QtWidgets import QMessageBox
 from PyQt5.QtWidgets import QPushButton
 from PyQt5.QtWidgets import QToolTip
-from PyQt5.QtWidgets import QWidget
 
-class AppIcon(QWidget):
+class AppMainWindow(QMainWindow):
 	def __init__(self):
 		super().__init__()
 		self.initUI()
@@ -22,6 +23,9 @@ class AppIcon(QWidget):
 		self.initSize()
 		self.initIcon()
 		self.initTip()
+		self.initStatusBar()
+		self.initMenuBar()
+		self.initToolBar()
 		self.show()
 
 	def initSize(self):
@@ -43,7 +47,7 @@ class AppIcon(QWidget):
 		# 图标
 		self.setWindowTitle("Icon")
 		# 创建一个QIcon对象并接收一个我们要显示的图片路径作为参数
-		self.setWindowIcon(QIcon("Resource/icon.PNG"))
+		self.setWindowIcon(QIcon("F:\pythonproject\my-qt5-study\Resource\icon.PNG"))
 
 	def initTip(self):
 		# 提示
@@ -62,6 +66,33 @@ class AppIcon(QWidget):
 		'''
 		pBtn.clicked.connect(QCoreApplication.instance().quit)
 
+	def initStatusBar(self):
+		# 状态栏
+		self.statusBar().showMessage('Ready')
+
+	def initMenuBar(self):
+		# 菜单栏
+		pActionExit = QAction(QIcon('F:\pythonproject\my-qt5-study\Resource\icon.PNG'), '&Exit', self)
+		pActionExit.setShortcut('Ctrl+Q')
+		pActionExit.setStatusTip('Exit!')
+		pActionExit.triggered.connect(qApp.quit)
+
+		menuBar = self.menuBar()
+		fileMenu = menuBar.addMenu('&File')
+		fileMenu.addAction(pActionExit)
+
+	def initToolBar(self):
+		pActionExit = QAction(QIcon('F:\pythonproject\my-qt5-study\Resource\icon.PNG'), '&Exit', self)
+		pActionExit.setShortcut('Ctrl+Q')
+		pActionExit.setStatusTip('Exit!')
+		pActionExit.triggered.connect(qApp.quit)
+
+		self.toolBar = self.addToolBar('Exit')
+		self.toolBar.addAction(pActionExit)
+
+		self.toolBar2 = self.addToolBar('Exit')
+		self.toolBar2.addAction(pActionExit)
+
 	def closeEvent(self, QCloseEvent):
 		reply = QMessageBox.question(self, 'Message', 'Sure to quit?',
 		                             QMessageBox.Yes|QMessageBox.No, QMessageBox.No)
@@ -74,6 +105,6 @@ class AppIcon(QWidget):
 
 if __name__ == "__main__":
 	app = QApplication(sys.argv)
-	pWindow = AppIcon()
+	pWindow = AppMainWindow()
 	sys.exit(app.exec_())
 
