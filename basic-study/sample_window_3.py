@@ -12,6 +12,7 @@ from PyQt5.QtWidgets import QDesktopWidget
 from PyQt5.QtWidgets import QMainWindow
 from PyQt5.QtWidgets import QMessageBox
 from PyQt5.QtWidgets import QPushButton
+from PyQt5.QtWidgets import QTextEdit
 from PyQt5.QtWidgets import QToolTip
 
 class AppMainWindow(QMainWindow):
@@ -26,6 +27,7 @@ class AppMainWindow(QMainWindow):
 		self.initStatusBar()
 		self.initMenuBar()
 		self.initToolBar()
+		self.initTextEdit()
 		self.show()
 
 	def initSize(self):
@@ -93,6 +95,10 @@ class AppMainWindow(QMainWindow):
 
 		self.toolBar2 = self.addToolBar('Exit')
 		self.toolBar2.addAction(pActionExit)
+
+	def initTextEdit(self):
+		pTextEdit = QTextEdit()
+		self.setCentralWidget(pTextEdit)
 
 	def closeEvent(self, QCloseEvent):
 		reply = QMessageBox.question(self, 'Message', 'Sure to quit?',
